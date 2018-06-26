@@ -1,0 +1,79 @@
+<style lang="scss">
+
+</style>
+<template>
+  <view class="container">
+    <repeat>
+      <icon class="abcdddddd" type="hot" />
+    </repeat>
+    <repeat>
+      <icon class="abceeeeee" type="hot" />
+    </repeat>
+    <repeat>
+      <icon class="abceeccce" type="stop" />
+    </repeat>
+    <icon2 type="stop" @stop.user="iconStop" />
+
+    <view>
+      <open-data type="userAvatarUrl"></open-data>
+      <open-data type="userNickName"></open-data>
+    </view>
+
+    <toast />
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import { connect } from 'wepy-redux'
+  import Icon from '../components/icon'
+  import Toast from 'wepy-com-toast'
+  import testMixin from '../mixins/test'
+
+  @connect({
+    num (state) {
+      return state.counter.num
+    },
+    asyncNum (state) {
+      return state.counter.asyncNum
+    },
+    sumNum (state) {
+      return state.counter.num + state.counter.asyncNum
+    }
+  })
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'test'
+    }
+    components = {
+      icon: Icon,
+      icon2: Icon,
+      toast: Toast
+    }
+
+    mixins = [testMixin]
+
+    data = {
+    }
+
+    computed = {
+    }
+
+    methods = {
+      parentFn () {
+        console.log('icon')
+      }
+    }
+
+    events = {
+      'index-emit': (...args) => {
+        let $event = args[args.length - 1]
+        console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`)
+      }
+    }
+
+    onLoad() {
+    }
+  }
+</script>

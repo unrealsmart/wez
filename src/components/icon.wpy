@@ -1,0 +1,111 @@
+<style lang="scss">
+  @font-face {font-family:zanui-weapp-icon;src:url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-eeb0d3c52a.eot);src:url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-eeb0d3c52a.eot?#iefix) format('embedded-opentype'),url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-eeb0d3c52a.woff2) format('woff2'),url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-eeb0d3c52a.woff) format('woff'),url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-eeb0d3c52a.ttf) format('truetype')}
+  .icon {display:inline-block}
+  .icon::before {font-family:zanui-weapp-icon!important;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased}
+  .icon-qr-invalid:before {content:'\e800'}
+  .icon-qr:before {content:'\e801'}
+  .icon-exchange:before {content:'\e802'}
+  .icon-close:before {content:'\e803'}
+  .icon-location:before {content:'\e804'}
+  .icon-upgrade:before {content:'\e805'}
+  .icon-check:before {content:'\e806'}
+  .icon-checked:before {content:'\e807'}
+  .icon-like-o:before {content:'\e808'}
+  .icon-like:before {content:'\e809'}
+  .icon-chat:before {content:'\e80a'}
+  .icon-shop:before {content:'\e80b'}
+  .icon-photograph:before {content:'\e80c'}
+  .icon-add:before {content:'\e80d'}
+  .icon-minus:before {content:'\e80e'}
+  .icon-add2:before {content:'\e80f'}
+  .icon-photo:before {content:'\e810'}
+  .icon-logistics:before {content:'\e811'}
+  .icon-edit:before {content:'\e812'}
+  .icon-passed:before {content:'\e813'}
+  .icon-cart:before {content:'\e814'}
+  .icon-shopping-cart:before {content:'\e815'}
+  .icon-arrow:before {content:'\e816'}
+  .icon-gift:before {content:'\e817'}
+  .icon-search:before {content:'\e818'}
+  .icon-clear:before {content:'\e819'}
+  .icon-success:before {content:'\e81a'}
+  .icon-fail:before {content:'\e81b'}
+  .icon-contact:before {content:'\e81c'}
+  .icon-wechat:before {content:'\e81d'}
+  .icon-alipay:before {content:'\e81e'}
+  .icon-password-view:before {content:'\e81f'}
+  .icon-password-not-view:before {content:'\e820'}
+  .icon-wap-nav:before {content:'\e821'}
+  .icon-wap-home:before {content:'\e822'}
+  .icon-ecard-pay:before {content:'\e823'}
+  .icon-balance-pay:before {content:'\e824'}
+  .icon-peer-pay:before {content:'\e825'}
+  .icon-credit-pay:before {content:'\e826'}
+  .icon-debit-pay:before {content:'\e827'}
+  .icon-other-pay:before {content:'\e828'}
+  .icon-browsing-history:before {content:'\e829'}
+  .icon-goods-collect:before {content:'\e82a'}
+  .icon-shop-collect:before {content:'\e82b'}
+  .icon-receive-gift:before {content:'\e82c'}
+  .icon-send-gift:before {content:'\e82d'}
+  .icon-setting:before {content:'\e82e'}
+  .icon-points:before {content:'\e82f'}
+  .icon-coupon:before {content:'\e830'}
+  .icon-free-postage:before {content:'\e831'}
+  .icon-discount:before {content:'\e832'}
+  .icon-birthday-privilege:before {content:'\e833'}
+  .icon-member-day-privilege:before {content:'\e834'}
+  .icon-balance-details:before {content:'\e835'}
+  .icon-cash-back-record:before {content:'\e836'}
+  .icon-points-mall:before {content:'\e837'}
+  .icon-exchange-record:before {content:'\e838'}
+  .icon-pending-payment:before {content:'\e839'}
+  .icon-pending-orders:before {content:'\e83a'}
+  .icon-pending-deliver:before {content:'\e83b'}
+  .icon-pending-evaluate:before {content:'\e83c'}
+  .icon-gift-card-pay:before {content:'\e83d'}
+  .icon-cash-on-deliver:before {content:'\e83e'}
+  .icon-underway:before {content:'\e83f'}
+  .icon-point-gift:before {content:'\e840'}
+  .icon-after-sale:before {content:'\e841'}
+  .icon-edit-data:before {content:'\e842'}
+  .icon-question:before {content:'\e843'}
+  .icon-delete:before {content:'\e844'}
+  .icon-records:before {content:'\e845'}
+  .icon-description:before {content:'\e846'}
+  .icon-card:before {content:'\e847'}
+  .icon-gift-card:before {content:'\e848'}
+  .icon-clock:before {content:'\e849'}
+  .icon-gold-coin:before {content:'\e84a'}
+  .icon-completed:before {content:'\e84b'}
+  .icon-value-card:before {content:'\e84c'}
+  .icon-certificate:before {content:'\e84d'}
+  .icon-tosend:before {content:'\e84e'}
+  .icon-sign:before {content:'\e84f'}
+  .icon-home:before {content:'\e850'}
+  .icon-phone:before {content:'\e851'}
+  .icon-add-o:before {content:'\e852'}
+  .icon-minus-o:before {content:'\e853'}
+  .icon-play:before {content:'\e854'}
+  .icon-pause:before {content:'\e855'}
+  .icon-stop:before {content:'\e856'}
+  .icon-hot:before {content:'\e857'}
+  .icon-new:before {content:'\e858'}
+  .icon-new-arrival:before {content:'\e859'}
+  .icon-hot-sale:before {content:'\e85a'}
+
+</style>
+
+<template>
+  <view class="icon icon-{{ type }}"></view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Icon extends wepy.component {
+    props = {
+      type: String
+    }
+  }
+</script>
